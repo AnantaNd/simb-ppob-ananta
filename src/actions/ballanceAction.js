@@ -24,7 +24,7 @@ export const getBallance =()=>{
       }
     })
     .then((response)=>{
-      console.log(response);
+      // console.log(response);
       dispatch({
         type: GET_BALLANCE,
         payload:{
