@@ -18,7 +18,7 @@ function Login() {
   const navigate = useNavigate()
   const token = Cookies.get('jwtTokent')
 
-  const { loginAuthResult, loginAuthLoading, loginAuthError } = useSelector((state)=>state.loginReducers)
+  const { loginAuthResult, loginAuthError } = useSelector((state)=>state.loginReducers)
 
   const validSchema = Yup.object().shape({
     email: Yup.string().required('masukkan email').email(),

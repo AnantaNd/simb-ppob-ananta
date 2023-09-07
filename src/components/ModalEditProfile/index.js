@@ -14,7 +14,6 @@ function ModalEditProfile({onClose, onOpen}) {
 
 
   const dispatch = useDispatch()
-  const { updateUserResult, updateUserLoading, updateUserError } = useSelector((state)=>state.loginReducers)
   const {getProfileResult, getProfileLoading, getProfileError} = useSelector((state)=>state.profileReducer)
 
 

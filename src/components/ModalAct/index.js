@@ -6,11 +6,6 @@ function ModalAct({onClose, onOpen, nominal, onTopup, btnDisable}) {
   const [showModal, setShowModal] = useState(false);
 
 
-  const handleClose=()=>{
-    setShowModal(!showModal)
-  }
-  
-
   return (
     <>
       <button

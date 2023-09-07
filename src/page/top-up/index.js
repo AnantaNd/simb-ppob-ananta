@@ -13,7 +13,7 @@ function TopUp() {
   const [nominal, setNominal] = useState(null);
   const [errorNominal, setErrorNominal] = useState();
 
-  const { getTopupResult, getTopupLoading, getTopupError } = useSelector(
+  const { getTopupResult} = useSelector(
     (state) => state.topupReducer
   );
 

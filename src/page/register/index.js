@@ -19,7 +19,7 @@ function Register() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const {registUserResult, registUserLoading, registUserError} = useSelector((state)=>state.registReducer)
+  const {registUserError} = useSelector((state)=>state.registReducer)
 
   const handleRegister=(event)=>{
     event.preventDefault()

@@ -4,14 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { getBanner } from '../../actions/bannerAction'
 import { Layout, Menu, Saldo } from '../../components'
 
-import Cookies from 'js-cookie'
 import 'swiper/css'
 
 function Home() {
 
-  const {getBannerResult, getBannerLoading, getBannerError} = useSelector((state)=>
+  const {getBannerResult} = useSelector((state)=>
     state.bannerReducer)
-  const token = Cookies.get('jwtToken')
 
 
   const dispatch = useDispatch()

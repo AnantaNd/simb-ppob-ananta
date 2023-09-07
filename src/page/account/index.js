@@ -17,7 +17,7 @@ function Account() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const {getProfileResult, getProfileLoading, getProfileError} = useSelector((state)=>state.profileReducer)
+  const {getProfileResult, getProfileError} = useSelector((state)=>state.profileReducer)
 
 
   const handleLogout =async()=>{
