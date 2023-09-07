@@ -16,18 +16,17 @@ function Transaction() {
   const dispatch = useDispatch()
 
   const handleShowMore=()=>{
-    setLimitShow((prev)=>prev + 5)
-    
-    console.log(limitShow)
+    setLimitShow(getHistoryResult?.data?.limit + 5)
+    // console.log(limitShow)
   }
   
   useEffect(()=>{
-    dispatch(getHistory({limit: 5 + limitShow, offset: 0 }))
+    dispatch(getHistory({limit: 5 + limitShow, offset: 0  }))
     // console.log(dispatch)
   }, [dispatch, limitShow])
   
   
-  // console.log(getHistoryResult?.data?.limit);
+  console.log(getHistoryResult?.data?.limit);
 
   return (
     <div>
@@ -54,7 +53,9 @@ function Transaction() {
           )}
           {!getHistoryLoading &&
             getHistoryResult?.data?.records?.length > 0 &&(
-              <button onClick={handleShowMore} className='flex mx-auto justify-center font-semibold capitalize text-red-500'>show more</button>
+              <button 
+                // onClick={handleShowMore} 
+                className='flex mx-auto justify-center font-semibold capitalize text-red-500'>show more</button>
             )
           }
         </div>
