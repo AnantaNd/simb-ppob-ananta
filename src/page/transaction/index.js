@@ -17,14 +17,17 @@ function Transaction() {
 
   const handleShowMore=()=>{
     setLimitShow((prev)=>prev + 5)
+    
+    console.log(limitShow)
   }
   
   useEffect(()=>{
-    dispatch(getHistory({gelimit: 5 + limitShow, offset: 0}))
+    dispatch(getHistory({limit: 5 + limitShow, offset: 0 }))
+    // console.log(dispatch)
   }, [dispatch, limitShow])
   
   
-  // console.log(limitShow);
+  // console.log(getHistoryResult?.data?.limit);
 
   return (
     <div>
@@ -49,9 +52,11 @@ function Transaction() {
           ):(
             <p>{getHistoryError ? getHistoryError : 'Data transaction kosong'}</p>
           )}
-          {!getHistoryLoading && getHistoryResult?.data?.records?.lenght &&(
-            <button onClick={handleShowMore} className='flex mx-auto justify-center font-semibold capitalize text-red-500'>show more</button>
-          )}
+          {!getHistoryLoading &&
+            getHistoryResult?.data?.records?.length > 0 &&(
+              <button onClick={handleShowMore} className='flex mx-auto justify-center font-semibold capitalize text-red-500'>show more</button>
+            )
+          }
         </div>
       </Layout>
     </div>

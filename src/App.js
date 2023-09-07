@@ -12,18 +12,20 @@ function App() {
   // const token = Cookies.get('jwtToken')
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/register' element={<Register/>}/>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/transaction' element={<Transaction/>}/>
-        <Route path='/top-up' element={<TopUp/>}/>
-        <Route path='/account' element={<Account/>}/>
-        <Route path='/account' element={<Account/>}/>
-        <Route path='/payment/:id' element={<Payment/>}/>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/login' element={<Login/>}/>
+          <Route exact path='/register' element={<Register/>}/>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/transaction' element={<Transaction/>}/>
+          <Route path='/top-up' element={<TopUp/>}/>
+          <Route path='/account' element={<Account/>}/>
+          <Route path='/account' element={<Account/>}/>
+          <Route path='/payment/:id' element={<Payment/>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
