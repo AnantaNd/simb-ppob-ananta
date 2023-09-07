@@ -6,7 +6,7 @@ export const UPDATE_PHOTO = "UPDATE_PHOTO"
 const token = Cookies.get('jwtToken')
 
 export const updatePhoto=(data)=>{
-  return (dispatch)=>{
+  return async(dispatch)=>{
     dispatch({
       type: UPDATE_PHOTO,
       payload:{
@@ -15,7 +15,7 @@ export const updatePhoto=(data)=>{
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'PUT',
       url:'https://take-home-test-api.nutech-integrasi.app/profile/image',
       timeout: 12000,

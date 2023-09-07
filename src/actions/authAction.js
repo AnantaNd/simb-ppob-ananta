@@ -5,7 +5,7 @@ export const LOGIN_AUTH = 'LOGIN_AUTH'
 
 export const loginAuth = (data) => {
   // console.log('2. masuk action');
-  return (dsipatch) => {
+  return async (dsipatch) => {
     dsipatch({
       type: LOGIN_AUTH,
       payload:{
@@ -14,7 +14,7 @@ export const loginAuth = (data) => {
         errorMessage: false
       }
     })  
-    axios({
+    await axios({
       method: 'POST',
       url:'https://take-home-test-api.nutech-integrasi.app/login',
       timeout: 12000,

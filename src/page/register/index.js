@@ -95,7 +95,7 @@ function Register() {
         <button className='rounded py-2 bg-red-600 text-white w-full' type='submit'>Daftar</button>
         <p>Sudah Punya Akun? Login <Link className='font-semibold text-red-500' to='/login'>disini</Link></p>
       </form>
-      <div className='w-full '>
+      <div className='w-full hidden md:flex '>
         <img className='w-full h-full object-cover bg-cover bg-no-repeat bg-center' src={'/IllustrasiLogin.png'} alt="logo" />
       </div>
     </div>

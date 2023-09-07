@@ -7,7 +7,7 @@ const token = Cookies.get('jwtToken')
 
 export const postTopup = (data) => {
   // console.log('2. masuk action');
-  return (dsipacth) => {
+  return async(dsipacth) => {
     dsipacth({
       type: POST_TOPUP,
       payload:{
@@ -16,7 +16,7 @@ export const postTopup = (data) => {
         errorMessage: false
       }
     })  
-    axios({
+    await axios({
       method: 'POST',
       url:'https://take-home-test-api.nutech-integrasi.app/topup',
       timeout: 12000,

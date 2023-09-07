@@ -6,7 +6,7 @@ const token = Cookies.get('jwtToken')
 export const GET_PROFILE = "GET_PROFILE"
 
 export const getProfile =()=>{
-  return (dispatch) =>{
+  return async(dispatch) =>{
     dispatch({
       type: GET_PROFILE,
       payload:{
@@ -15,7 +15,7 @@ export const getProfile =()=>{
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'GET',
       url: 'https://take-home-test-api.nutech-integrasi.app/profile',
       timeout: 1200,

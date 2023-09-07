@@ -6,7 +6,7 @@ const token = Cookies.get('jwtToken')
 export const GET_SERVICE = "GET_SERVICE"
 
 export const getService =()=> {
-  return (dispatch) =>{
+  return async(dispatch) =>{
     dispatch({
       type: GET_SERVICE,
       payload: {
@@ -15,7 +15,7 @@ export const getService =()=> {
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'GET',
       url: 'https://take-home-test-api.nutech-integrasi.app/services',
       timeout: 1200, 

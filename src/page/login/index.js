@@ -33,7 +33,7 @@ function Login() {
     dispatch(loginAuth({email: email, password: pass}))
     setTimeout(()=>{
       window.location.reload()
-    },2000)
+    },3000)
   }
 
   useEffect(()=>{
@@ -92,7 +92,7 @@ function Login() {
           </div>
         )}
       </form>
-      <div className='w-full '>
+      <div className='w-full hidden md:flex'>
         <img className='w-full h-full object-cover bg-cover bg-no-repeat bg-center' src={'/IllustrasiLogin.png'} alt="logo" />
       </div>
     </div>

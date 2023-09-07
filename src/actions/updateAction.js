@@ -7,7 +7,7 @@ const token = Cookies.get("jwtToken")
 
 export const updateUser = (data) => {
   // console.log('2. masuk action');
-  return (dsipacth) => {
+  return async(dsipacth) => {
     dsipacth({
       type: UPDATE_USER,
       payload:{
@@ -16,7 +16,7 @@ export const updateUser = (data) => {
         errorMessage: false,
       }
     })  
-    axios({
+    await axios({
       method: 'PUT',
       url:'https://take-home-test-api.nutech-integrasi.app/profile/update',
       timeout: 12000,

@@ -61,35 +61,41 @@ function ModalEditProfile({onClose, onOpen}) {
                   </h3>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <form>
-                    <div className='flex flex-col w-96'>
-                      <label className='py-2'>Email</label>
-                      <input 
+                {getProfileResult?(
+                  <div className="relative p-6 flex-auto">
+                    <form>
+                      <div className='flex flex-col w-96'>
+                        <label className='py-2'>Email</label>
+                        <input 
+                          className='p-2 border border-gray-400 rounded-md' 
+                          name='email' 
+                          defaultValue={getProfileResult?.data?.email}
+                          onChange={(e)=>setEmail(e.target.value)}
+                          disabled/>
+                      </div>
+                      <div className='flex flex-col w-96'>
+                        <label className='py-2'>Nama Depan</label>
+                        <input 
+                          className='p-2 border border-gray-400 rounded-md'
+                          name='name' 
+                          defaultValue={getProfileResult?.data?.first_name}
+                          onChange={(e)=>setNamaDepan(e.target.value)}/>
+                      </div>
+                      <div className='flex flex-col w-96'>
+                        <label className='py-2'>Nama Belakang</label>
+                        <input 
                         className='p-2 border border-gray-400 rounded-md' 
-                        name='email' 
-                        defaultValue={getProfileResult?.data?.email}
-                        onChange={(e)=>setEmail(e.target.value)}
-                        disabled/>
-                    </div>
-                    <div className='flex flex-col w-96'>
-                      <label className='py-2'>Nama Depan</label>
-                      <input 
-                        className='p-2 border border-gray-400 rounded-md'
                         name='name' 
-                        defaultValue={getProfileResult?.data?.first_name}
-                        onChange={(e)=>setNamaDepan(e.target.value)}/>
-                    </div>
-                    <div className='flex flex-col w-96'>
-                      <label className='py-2'>Nama Belakang</label>
-                      <input 
-                      className='p-2 border border-gray-400 rounded-md' 
-                      name='name' 
-                      defaultValue={getProfileResult?.data?.last_name}
-                      onChange={(e)=>setNamaBlk(e.target.value)}/>
-                    </div>
-                  </form>
-                </div>
+                        defaultValue={getProfileResult?.data?.last_name}
+                        onChange={(e)=>setNamaBlk(e.target.value)}/>
+                      </div>
+                    </form>
+                  </div>
+                ):getProfileLoading?(
+                  <p className='text-lg font-semibold text-center my-8'>Loading ...</p>
+                ):(
+                  <p>{getProfileError ? getProfileError : 'Data profile kosong'}</p>
+                )}
                 {/*footer*/}
                 <div className="flex items-center justify-end py-3 px-4 border-t border-solid border-slate-200 rounded-b">
                   <button

@@ -3,7 +3,7 @@ import axios from "axios"
 export const REGIST_USER = 'REGIST_USER'
 
 export const regist=(data)=>{
-  return (dispatch)=>{
+  return async(dispatch)=>{
     dispatch({
       type: REGIST_USER,
       payload:{
@@ -12,7 +12,7 @@ export const regist=(data)=>{
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'POST',
       url:'https://take-home-test-api.nutech-integrasi.app/registration',
       timeout: 12000,

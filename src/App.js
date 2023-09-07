@@ -9,6 +9,7 @@ import TopUp from './page/top-up';
 import Transaction from './page/transaction';
 
 function App() {
+  // const token = Cookies.get('jwtToken')
 
   return (
     <BrowserRouter>
@@ -20,7 +21,7 @@ function App() {
         <Route path='/top-up' element={<TopUp/>}/>
         <Route path='/account' element={<Account/>}/>
         <Route path='/account' element={<Account/>}/>
-        <Route path='/payment' element={<Payment/>}/>
+        <Route path='/payment/:id' element={<Payment/>}/>
       </Routes>
     </BrowserRouter>
   );

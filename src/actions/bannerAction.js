@@ -7,7 +7,7 @@ const token = Cookies.get('jwtToken')
 export const GET_BANNER = "GET_BANNER"
 
 export const getBanner =()=>{
-  return (dispatch) =>{
+  return async(dispatch) =>{
     dispatch({
       type: GET_BANNER,
       payload:{
@@ -16,7 +16,7 @@ export const getBanner =()=>{
         errorMessage: false,
       }
     })
-    axios({
+    await axios({
       method: 'GET',
       url: 'https://take-home-test-api.nutech-integrasi.app/banner',
       timeout: 1200,

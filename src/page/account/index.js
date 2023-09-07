@@ -47,6 +47,7 @@ function Account() {
               id='picture'
               accept="image/png, image/jpeg"
               onChange={handleSelectImg}
+              // value={'selectImg'}
               className="rounded-full bg-secondary-color w-10 h-10 absolute translate-x-16 -translate-y-9 z-20 opacity-0 "
             />
             <label htmlFor='picture' className='rounded-full bg-gray-100 w-8 h-8 absolute translate-x-16 -translate-y-8  z-20'>

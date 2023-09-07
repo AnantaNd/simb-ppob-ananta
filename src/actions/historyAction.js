@@ -6,7 +6,7 @@ const token = Cookies.get('jwtToken')
 export const GET_HISTORY = "GET_HISTORY"
 
 export const getHistory = () =>{
-  return(dispatch)=>{
+  return async(dispatch)=>{
     dispatch({
       type: GET_HISTORY,
       payload:{
@@ -15,7 +15,7 @@ export const getHistory = () =>{
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'GET',
       url: 'https://take-home-test-api.nutech-integrasi.app/transaction/history',
       timeout: 1200,

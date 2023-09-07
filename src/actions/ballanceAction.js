@@ -6,7 +6,7 @@ const token = Cookies.get('jwtToken')
 export const GET_BALLANCE = 'GET_BALLENCE'
 
 export const getBallance =()=>{
-  return(dispatch) =>{
+  return async(dispatch) =>{
     dispatch({
       type: GET_BALLANCE,
       payload:{
@@ -15,7 +15,7 @@ export const getBallance =()=>{
         errorMessage: false
       }
     })
-    axios({
+    await axios({
       method: 'GET',
       url: 'https://take-home-test-api.nutech-integrasi.app/balance',
       timeout: 1200,
@@ -24,7 +24,7 @@ export const getBallance =()=>{
       }
     })
     .then((response)=>{
-      // console.log(response);
+      console.log(response);
       dispatch({
         type: GET_BALLANCE,
         payload:{
