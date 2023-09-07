@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { getProfile } from '../../actions/profileAction';
 import { updateUser } from '../../actions/updateAction';
 
@@ -12,7 +12,6 @@ function ModalEditProfile({onClose, onOpen}) {
   const [namaBlk, setNamaBlk] = useState('')
   const [email, setEmail] = useState('')
 
-  const navigate = useNavigate()
 
   const dispatch = useDispatch()
   const { updateUserResult, updateUserLoading, updateUserError } = useSelector((state)=>state.loginReducers)
